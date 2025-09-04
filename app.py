@@ -17,7 +17,7 @@ if st.button("Generate Excuse"):
     prompt = f"Generate a {tone.lower()} excuse for a {scenary.lower()} situation. Urgency level: {urgency}. Context: {context}."
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}]
     )
 
@@ -40,5 +40,6 @@ proof_type = st.selectbox("Proof type:", ["Chat screenshot", "Location log", "Do
 st.text(f"→ Here we would generate a fake {proof_type} to support the excuse.")
 
 st.markdown("<hr><center><small style='color:deeppink;'>Made by a student, with love 💗</small></center>", unsafe_allow_html=True)
+
 
 
